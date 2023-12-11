@@ -1,11 +1,11 @@
 steps:
-- name: node:21-alpine3.18
+- name: node
   entrypoint: npm
   args: ["install"]
-- name: node:21-alpine3.18
+- name: node
   entrypoint: yarn
   args: ["script-lint"]
-- name: node:21-alpine3.18
+- name: node
   entrypoint: npx
   args: ["nuxi", "generate", "dist"]
 - name: gcr.io/cloud-builders/gsutil
