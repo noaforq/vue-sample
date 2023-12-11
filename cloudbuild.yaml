@@ -1,11 +1,11 @@
 steps:
-- name: node
+- name: node:21
   entrypoint: npm
   args: ["install"]
-- name: node
+- name: node:21
   entrypoint: yarn
   args: ["script-lint"]
-- name: node
+- name: node:21
   entrypoint: npx
   args: ["nuxi", "generate", "dist"]
 - name: gcr.io/cloud-builders/gsutil
