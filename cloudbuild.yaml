@@ -7,6 +7,6 @@ steps:
   args: ["script-lint"]
 - name: node:21
   entrypoint: npx
-  args: ["nuxi", "generate", "dist"]
+  args: ["nuxi", "generate", "."]
 - name: gcr.io/cloud-builders/gsutil
-  args: ['rsync', '-d', '-r', './dist', 'gs://ci-text/']
+  args: ['rsync', '-d', '-r', 'dist', 'gs://ci-text/']
