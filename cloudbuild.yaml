@@ -1,0 +1,15 @@
+steps:
+- name: node:21-alpine3.18
+  entrypoint: npm
+  args: ["install"]
+- name: node:21-alpine3.18
+  entrypoint: yarn
+  args: ["script-lint"]
+- name: node:21-alpine3.18
+  entrypoint: yarn
+  args: ["style-lint"]
+- name: node:21-alpine3.18
+  entrypoint: npx
+  args: ["nuxi", "generate", "dist"]
+- name: gcr.io/cloud-builders/gsutil
+  args: ['rsync', '-d', '-r', './dist', 'gs://dev-ui-backet/']

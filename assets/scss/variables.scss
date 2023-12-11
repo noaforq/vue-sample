@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400&display=swap");
+:root {
+  --color-main-primary: #417abe;
+  --color-main-secondary: #ffffff;
+  --color-main-tertiary: #ebf0f3;
+
+  --color-button-outline-font-tertiary: #de142b;
+
+  /* nav-menu & icon */
+  --color-nav-menu: #0a243a;
+  --color-nav-header: #fefefe;
+
+  /* border */
+  --color-border-primary: rgba(250 250 250/ 0.7);
+
+  /* font-family */
+  --font-family-root: "InterRegular", sans-serif;
+  --font-family-label: "Noto Sans JP";
+
+  /* font-bold */
+  --font-bold: bold;
+
+  /* font-size */
+  --font-size-h1: 32px;
+  --font-size-h2: 28px;
+  --font-size-h3: 24px;
+  --font-size-h4: 20px;
+  --font-size-h5: 18px;
+  --font-size-body: 16px;
+  --font-size-caption: 14px;
+  --font-size-minimum: 12px;
+}
+
+/** media query mixin **/
+@mixin media($breakpoint) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+$breakpoints: (
+  xs: "only screen and (max-width: 599px)",
+  sm: "only screen and (max-width: 959px)",
+  md: "only screen and (max-width: 1263px)",
+  lg: "only screen and (max-width: 1919px)",
+);

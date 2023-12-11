@@ -1,0 +1,10 @@
+# yarn stylelint ./**/*.scss --custom-syntax postcss-lessで実行できる
+# 標準的なstylelintの設定をベースのルールにする
+extends: "stylelint-config-standard"
+rules:
+    # @で始まるtailwindのクラスは許容する
+    # cf. https://stylelint.io/user-guide/rules/at-rule-no-unknown/
+    at-rule-no-unknown:
+        - true
+        - ignoreAtRules:
+            - tailwind
