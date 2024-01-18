@@ -3,7 +3,7 @@ FROM node:21-alpine3.18
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-EXPOSE 8016
+EXPOSE 8080
 
 ARG SCOUT_WEB_LOCAL_URL
 ENV API_URL ${SCOUT_WEB_LOCAL_URL}
