@@ -12,7 +12,8 @@
     "build-storybook": "storybook build",
     "script-lint": "eslint ./**/*.ts",
     "style-lint": "stylelint ./**/*.scss --custom-syntax postcss-less",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "start": "nuxt start"
   },
   "devDependencies": {
     "@babel/core": "^7.23.3",

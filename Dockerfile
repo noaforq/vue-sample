@@ -1,18 +1,23 @@
-FROM node:14
+FROM node:21-alpine3.18
 
+RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
-
-COPY ./package.json ./
-COPY ./yarn.lock ./
-RUN yarn
 
 EXPOSE 8080
 
-ARG _API_URL _GA_MEASUREMENT_ID
-ENV GA_MEASUREMENT_ID ${_GA_MEASUREMENT_ID}
-ENV API_URL ${_API_URL}
+ENV API_URL=https://exsample.com
 ENV HOST=0.0.0.0
 ENV PORT=8080
+
+COPY ./package.json ./
+COPY ./package-lock.json ./
+
+RUN yarn install
+
+RUN apk add --no-cache bash
+RUN apk add --no-cache make
+RUN apk add --no-cache curl
+RUN apk add --no-cache openjdk11
 
 COPY . ./
 RUN yarn build
