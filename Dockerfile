@@ -21,3 +21,4 @@ RUN apk add --no-cache openjdk11
 
 ENV BASH_ENV="/etc/profile"
 ENTRYPOINT [ "/bin/bash", "-c", "yarn install && /bin/bash", "" ]
+CMD [ "yarn", "start" ]
