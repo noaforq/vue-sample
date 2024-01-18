@@ -11,6 +11,7 @@ ENV PORT=8080
 
 COPY ./package.json ./
 COPY ./package-lock.json ./
+COPY ./yarn.lock ./
 
 RUN yarn install
 
